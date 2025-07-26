@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GProve</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./prove.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+   
+    <div class="header" id="header" style="display:none;">
+      <div class="user">
+        <img id="userAvatar" class="avatar" src="" alt="avatar">
+        <span id="userName"></span>
+      </div>
+      <button class="btn logout" id="logoutBtn">Logout</button>
+    </div>
+    
+    <div class="login-box" id="loginBox">
+      <h2>Login / Register</h2>
+      <div class="input-row">
+        <label>Username <input type="text" id="loginUser" maxlength="24" autocomplete="username" /></label>
+        <label>Password <input type="password" id="loginPass" maxlength="24" autocomplete="current-password" /></label>
+        <label>Avatar <input type="file" id="loginAvatar" accept="image/*" /></label>
+        <label>Choose team:
+          <span id="loginTeamSelect" class="team-select"></span>
+        </label>
+      </div>
+      <button class="btn" id="loginBtn">Start</button>
+      <div id="loginErr" class="err"></div>
+    </div>
+   
+    <div id="mainBox" style="display:none;">
+      <div class="main-content">
+        <div class="upload-box">
+          <h3>Upload new image</h3>
+          <div class="input-row">
+            <input type="file" id="uploadImg" accept="image/*" />
+          </div>
+          <button class="btn upload" id="uploadBtn">Upload</button>
+          <div id="uploadErr" class="err"></div>
+        </div>
+        <div class="tabs">
+          <button class="tab-btn active" id="tabNew">New</button>
+          <button class="tab-btn" id="tabTop">Top Prove</button>
+        </div>
+        <div id="imagesBox" class="images"></div>
+      </div>
+      <div id="singleImageBox" style="display:none;"></div>
+    </div>
+    <div class="top-bar" id="topBar" style="display:none;"></div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

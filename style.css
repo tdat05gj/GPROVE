@@ -1,0 +1,411 @@
+:root {
+  --team-color: #FF54D7;
+  --bg-color: #f8f9fb;
+  --card-bg: #fff;
+  --text-color: #23272f;
+  --text-soft: #747a8c;
+  --border-light: #e6e7e9;
+  --input-bg: #f4f5f8;
+  --shadow: 0 4px 18px 0 rgba(60,72,99,.10);
+  --radius-lg: 14px;
+  --radius-md: 9px;
+  --radius-sm: 4px;
+  --transition: .16s cubic-bezier(.4,0,.2,1);
+}
+body.pink    { --team-color: #FF54D7; }
+body.blue    { --team-color: #61C3FF; }
+body.green   { --team-color: #B0FF6F; }
+body.orange  { --team-color: #FF955E; }
+body.purple  { --team-color: #B753FF; }
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-color);
+}
+
+.header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 36px auto 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .user {
+  display: flex; align-items: center; font-weight: 700; font-size: 1em;
+  color: var(--team-color);
+  letter-spacing: 0.3px;
+}
+.header .avatar {
+  width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid var(--team-color); margin-right: 10px;
+  background: #fff;
+}
+.btn.logout {
+  background: var(--team-color);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: var(--radius-lg);
+  font-size: 0.97em;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.4px;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  box-shadow: var(--shadow);
+}
+.btn.logout:hover { background: #e13b9f; transform: translateY(-1px) scale(1.04);}
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.upload-box {
+  width: 100%;
+  background: var(--card-bg);
+  margin: 0 0 18px 0;
+  padding: 13px 17px 12px 17px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.upload-box h3 {
+  color: var(--team-color);
+  font-size: 1em;
+  font-weight: 700;
+  margin: 0 0 9px 0;
+}
+.input-row {display: flex; flex-direction: column; gap: 8px; margin: 8px 0;}
+.input-row input[type="text"], .input-row input[type="password"], .input-row input[type="file"] {
+  padding: 7px 9px; border: 1.2px solid var(--border-light); border-radius: var(--radius-md); font-size: 0.95em;
+  background: var(--input-bg); color: var(--text-color);
+  font-family: inherit;
+  box-shadow: 0 1px 2px #0001;
+  transition: border var(--transition), background var(--transition);
+}
+.input-row input[type="text"]:focus, .input-row input[type="password"]:focus {
+  border: 1.2px solid var(--team-color);
+  background: #fff;
+}
+.btn {
+  background: var(--team-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 0.97em;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 7px #0001;
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+.btn.upload { background: var(--team-color);}
+.btn.upload:hover { background: #e13b9f; transform: scale(1.04);}
+.tabs {
+  display: flex; gap: 11px;
+  margin: 15px 0 8px 0;
+  justify-content: center;
+}
+.tab-btn {
+  background: none; border: none; font-size: 0.99rem; font-weight: 700; cursor: pointer;
+  color: var(--team-color); padding: 6px 17px; border-radius: 13px;
+  letter-spacing: 0.3px;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition);
+}
+.tab-btn.active, .tab-btn:hover {
+  color: #fff;
+  background: var(--team-color);
+}
+
+
+.images {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 15px;
+  margin: 0 auto 20px auto;
+  box-sizing: border-box;
+  justify-items: center;
+}
+.image-card {
+  background: var(--card-bg, #fff);
+  border-radius: 14px;
+  box-shadow: 0 2px 8px #0002;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: 180px;
+  min-width: 0;
+}
+.image-card .img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #f5f5f7;
+  border-bottom: 1px solid var(--border-light, #e6e7e9);
+  object-fit: contain;
+}
+
+
+.image-card .uinfo {
+  display: flex; align-items: center; gap: 7px; padding: 8px 9px 2px 9px; font-size: 0.86em;
+}
+.image-card .avatar {
+  width: 21px; height: 21px; border-radius: 50%; border: 1.2px solid var(--team-color);
+  object-fit: cover; background: #fff;
+}
+.image-card .uinfo span {
+  font-weight: 700;
+  color: var(--team-color);
+  font-size: 0.96em;
+}
+
+
+.prove-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 6px 9px 4px 9px;
+  width: 100%;
+  font-size: 0.98em;
+}
+.prove-box > div:first-child {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+.prove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 2px;
+  transition: background 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+}
+.prove-btn img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+}
+.prove-btn.proved,
+.prove-btn:hover {
+  background: #f7e6fa;
+  box-shadow: 0 0 0 2px var(--team-color, #FF54D7) inset;
+}
+.prove-count {
+  font-weight: 700;
+  color: var(--team-color, #FF54D7);
+  font-size: 0.95em;
+  min-width: 15px;
+  text-align: left;
+  margin-left: 4px;
+}
+
+.share-link {
+  font-size: .91em;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: color var(--transition);
+  padding-left: 10px;
+  padding-right: 18px; 
+  min-width: 54px;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: visible;
+  background: transparent;
+  text-align: right;
+  letter-spacing: 0.03em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.share-link:hover { color: var(--team-color);}
+.top-bar {
+  background: var(--team-color);
+  color: #fff;
+  padding: 7px 0;
+  text-align: center;
+  font-size: 0.99em;
+  border-radius: var(--radius-md);
+  margin: 0 0 15px 0;
+  box-shadow: var(--shadow);
+  letter-spacing: 0.2px;
+  position: fixed;
+  top: 14px; left: 50%; transform: translateX(-50%);
+  min-width: 180px; max-width: 98vw; z-index: 100;
+}
+.err {
+  color: #e04d4d;
+  margin-top: 6px;
+  font-size: 0.98em;
+}
+.login-box {
+  background: var(--card-bg);
+  border: 1.7px solid var(--team-color);
+  border-radius: var(--radius-lg);
+  padding: 23px 10px 16px 10px;
+  box-shadow: var(--shadow);
+  margin: 60px auto 35px auto;
+  max-width: 280px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.login-box h2 {
+  color: var(--team-color);
+  text-align: center;
+  font-size: 1em;
+  font-weight: 800;
+  margin-bottom: 15px;
+  letter-spacing: 0.7px;
+}
+.login-box label {
+  color: var(--text-soft);
+  font-size: 0.99em;
+}
+.team-select { display: flex; gap: 7px; margin-top: 5px;}
+.team-btn {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 1.2px solid #fff;
+  cursor: pointer;
+  outline: 1.2px solid var(--border-light);
+  background: var(--team-color);
+  opacity: 0.8;
+  transition: outline var(--transition), opacity var(--transition), box-shadow var(--transition);
+  box-shadow: 0 1.5px 6px #0002;
+}
+.team-btn.selected {
+  outline: 2px solid var(--team-color);
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--team-color, #ddd3) inset, 0 1px 8px #0001;
+}
+
+
+.profile-box {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 20px 25px 17px 25px;
+  max-width: 700px;
+  margin: 40px auto 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 9;
+}
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.profile-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--team-color);
+  margin-bottom: 7px;
+  background: #fff;
+}
+.profile-name {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-bottom: 2px;
+  word-break: break-all;
+}
+.profile-team {
+  margin-bottom: 7px;
+  color: #fff;
+  background: var(--team-color);
+  padding: 3px 13px;
+  border-radius: 11px;
+  font-size: 0.98em;
+  font-weight: 600;
+}
+.profile-img-count {
+  margin-bottom: 7px;
+  color: var(--text-soft);
+  font-size: 0.97em;
+}
+.profile-back {
+  padding: 5px 14px;
+  background: var(--team-color);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-weight: 700;
+  margin-top: 7px;
+  cursor: pointer;
+  transition: background .14s;
+}
+.profile-back:hover { background: #d13db1;}
+.profile-images {
+  width: 100%;
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  justify-items: center;
+}
+.profile-loading, .profile-err {
+  color: var(--text-soft);
+  font-size: 1.07em;
+  margin: 20px 0;
+}
+@media (max-width: 1200px) {
+  .main-content, .header, .images { max-width: 900px; }
+  .images { grid-template-columns: repeat(4, 1fr);}
+  .image-card { max-width: 23vw; }
+}
+@media (max-width: 900px) {
+  .main-content, .header, .images { max-width: 650px; }
+  .images { grid-template-columns: repeat(3, 1fr);}
+  .image-card { max-width: 30vw; }
+  .profile-images { grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width: 700px) {
+  .profile-box { max-width: 98vw; padding: 14px 3vw; }
+  .profile-images { grid-template-columns: repeat(2, 1fr);}
+}
+@media (max-width: 600px) {
+  .main-content, .header, .images { max-width: 100vw; }
+  .images { grid-template-columns: repeat(2, 1fr);}
+  .image-card { max-width: 49vw; }
+  .upload-box { padding: 9px 5px 9px 5px; }
+}
+
+::-webkit-scrollbar { width: 7px; background: #f2f2f2;}
+::-webkit-scrollbar-thumb { background: #e3e3e3; border-radius: 4px;}
+::-webkit-scrollbar-thumb:hover { background: #d1d1d1; }
